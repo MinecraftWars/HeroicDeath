@@ -53,6 +53,8 @@ public class HeroicDeath extends JavaPlugin
 	public String						mobSlime;
 	public String						mobGiant;
 	public String						mobWolf;
+	public String						mobEnderman;
+	public String						mobBlaze;
 	public static boolean				useDisplayName;
 	public boolean						serverBroadcast;
 	public List<String>					quietWorlds;
@@ -95,6 +97,8 @@ public class HeroicDeath extends JavaPlugin
 		mobSlime = getConfig().getString( "monsters.slime", "Slime" );
 		mobGiant = getConfig().getString( "monsters.giant", "Giant" );
 		mobWolf = getConfig().getString( "monsters.wolf", "Wolf" );
+		mobEnderman = getConfig().getString( "monsters.enderman", "Enderman" );
+		mobBlaze = getConfig().getString( "monsters.blaze", "Blaze" );
 		useDisplayName = getConfig().getBoolean( "options.useDisplayName", false );
 		serverBroadcast = getConfig().getBoolean( "options.serverBroadcast", true );
 		quietWorlds = getConfig().getStringList( "options.worlds.quiet" );

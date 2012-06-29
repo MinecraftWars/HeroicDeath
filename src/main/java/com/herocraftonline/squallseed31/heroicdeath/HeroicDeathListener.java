@@ -1,7 +1,9 @@
 package com.herocraftonline.squallseed31.heroicdeath;
 
 import org.bukkit.block.Block;
+import org.bukkit.entity.Blaze;
 import org.bukkit.entity.Creeper;
+import org.bukkit.entity.Enderman;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Ghast;
 import org.bukkit.entity.Giant;
@@ -121,6 +123,12 @@ public class HeroicDeathListener implements Listener {
 		}
 		else if ( damager instanceof Wolf ) {
 			attackerName = plugin.mobWolf;
+		}
+		else if ( damager instanceof Enderman ) {
+			attackerName = plugin.mobEnderman;
+		}
+		else if ( damager instanceof Blaze ) {
+			attackerName = plugin.mobBlaze;
 		}
 		else {
 			attackerName = plugin.mobMonster;
@@ -282,6 +290,12 @@ public class HeroicDeathListener implements Listener {
 					else if ( dc.getAttacker().equalsIgnoreCase( plugin.mobWolf )
 							&& !HeroicDeath.DeathMessages.WolfMessages.isEmpty() )
 						killString = getMessage( HeroicDeath.DeathMessages.WolfMessages, dc );
+					else if ( dc.getAttacker().equalsIgnoreCase( plugin.mobEnderman )
+							&& !HeroicDeath.DeathMessages.EndermanMessages.isEmpty() )
+						killString = getMessage( HeroicDeath.DeathMessages.EndermanMessages, dc );
+					else if ( dc.getAttacker().equalsIgnoreCase( plugin.mobBlaze )
+							&& !HeroicDeath.DeathMessages.BlazeMessages.isEmpty() )
+						killString = getMessage( HeroicDeath.DeathMessages.BlazeMessages, dc );
 					else
 						killString = getMessage( HeroicDeath.DeathMessages.MonsterMessages, dc );
 				}

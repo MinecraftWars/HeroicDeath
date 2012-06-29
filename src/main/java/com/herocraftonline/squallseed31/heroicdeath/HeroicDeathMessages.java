@@ -28,6 +28,8 @@ public class HeroicDeathMessages
   public ArrayList<String> SkeletonMessages = new ArrayList<String>();
   public ArrayList<String> GiantMessages = new ArrayList<String>();
   public ArrayList<String> WolfMessages = new ArrayList<String>();
+  public ArrayList<String> EndermanMessages = new ArrayList<String>();
+  public ArrayList<String> BlazeMessages = new ArrayList<String>();
   public ArrayList<String> LavaMessages = new ArrayList<String>();
   public ArrayList<String> SuffocationMessages = new ArrayList<String>();
   public ArrayList<String> DispenserMessages = new ArrayList<String>();
@@ -128,6 +130,10 @@ public class HeroicDeathMessages
             currentParse = HeroicDeathMessages.ParseType.Giant;
         else if (thisLine.equalsIgnoreCase(":wolf"))
         	currentParse = HeroicDeathMessages.ParseType.Wolf;
+        else if (thisLine.equalsIgnoreCase(":enderman"))
+        	currentParse = HeroicDeathMessages.ParseType.Enderman;
+        else if (thisLine.equalsIgnoreCase(":blaze"))
+        	currentParse = HeroicDeathMessages.ParseType.Blaze;
         else if (thisLine.equalsIgnoreCase(":lava"))
           currentParse = HeroicDeathMessages.ParseType.Lava;
         else if (thisLine.equalsIgnoreCase(":other"))
@@ -186,6 +192,12 @@ public class HeroicDeathMessages
         	break;
           case Wolf:
         	this.WolfMessages.add(thisLine);
+        	break;
+          case Enderman:
+        	this.EndermanMessages.add(thisLine);
+        	break;
+          case Blaze:
+        	this.BlazeMessages.add(thisLine);
         	break;
           case Slime:
         	  this.SlimeMessages.add(thisLine);
@@ -338,7 +350,7 @@ public class HeroicDeathMessages
   {
     NONE, Drown, Cactus, Fire, Creeper, Explosion, 
     Fall, PVP, Void, Monster, Ghast, Slime, Zombie, PigZombie, 
-    Spider, Skeleton, Giant, Wolf, Lava, Other, Suffocation, 
+    Spider, Skeleton, Giant, Wolf, Enderman, Blaze, Lava, Other, Suffocation, 
     Dispenser, Lightning, Suicide, Starvation;
   }
 }
